@@ -28,6 +28,84 @@ body {
   background-color: #eee;
   font-family: 'Roboto Condensed', sans-serif;
 }
+/*------------------------------------------------*/
+/*Styling for Tweets*/
+header{
+  display: flex;
+  background-color: #DCDCDC;
+  padding: 0.5em;
+  border-radius: 5px;
+}
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
+article {
+  opacity: 0.5;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 1em;
+  width: 410px;
+}
+
+article:hover{
+  opacity: 1;
+}
+
+header h3{
+  flex: 1;
+  padding-left: 10px;
+  margin: 0;
+  display: inline-block
+}
+
+header h6{
+  flex: 0;
+  display: inline-block;
+  margin: 0;
+}
+
+section.tweets{
+  margin-top: 10px;
+}
+
+
+p{
+  padding: 10px;
+}
+
+header img{
+  flex: 0;
+  width: 60px;
+  height: 60px;
+  margin: 0px;
+}
+
+footer{
+  height: 40px;
+  position: relative;
+  border-top: 0.2px solid #D3D3D3;
+  padding:0.5em;
+}
+
+footer h6{
+  float: left;
+  font-weight: 300;
+  margin: 0;
+  position: absolute;
+  top: 10px;
+}
+
+
+.tweet footer i{
+  color: green;
+  float: right;
+  margin: 0 0.25em;
+  display: none;
+}
+
+
+.tweet:hover footer i{
+  color: green;
+  float: right;
+  margin: 0 0.25em;
+  display: inline-block;
+
+}
