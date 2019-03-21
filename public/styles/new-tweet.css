@@ -2,11 +2,22 @@
   padding: 60px 20px;
   background-color: #FFFFFF;
 }
+
 .new-tweet{
   padding: 10px;
   border-radius: 5px;
   background-color: #DCDCDC;
   border: 1px solid black;
+}
+
+.c-validation{
+  display: none;
+  background: #c51244 !important;
+  padding: 10px !important;
+  border-radius: 0 !important;
+  position: relative;
+  box-shadow: 1px 1px 1px #aaaaaa;
+  margin-top: 10px;
 }
 
 .counter{

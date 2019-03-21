@@ -8,7 +8,8 @@
 
 $(document).ready(function() {
   $("textarea").focus(function(){
-    $(".hello").show();
+
+  $(".hello").show();
   }).blur(function(){
     $(".hello").hide();
   });
@@ -16,8 +17,6 @@ $(document).ready(function() {
   $("textarea").focus();
 
   $(".hello").hide();
-
-
 
 //   const data = [
 //   {
@@ -111,19 +110,22 @@ $(document).ready(function() {
     event.preventDefault();
     var textarea = $("textarea")
     if(textarea.val().length === 0){
-      alert("Error");
+      $(".c-validation").text("Please create a tweet. :-)")
+      $(".c-validation").slideDown()
     } else if (textarea.val().length > 140){
-      alert("Your tweet is greater than 140 characters.")
+      $(".c-validation").slideDown()
+      $(".c-validation").text("Brevity is the soul of wit. Please keep your message to 140 characters!")
     } else{
-    $.ajax({
-      url: '/tweets',
-      type: "POST",
-      data: $(this).serialize()
-    })
-    .then(loadTweets).then(function(){
-      textarea.val("").trigger("input")
-    })
-  }
+      $(".c-validation").hide()
+      $.ajax({
+        url: '/tweets',
+        type: "POST",
+        data: $(this).serialize()
+      })
+      .then(loadTweets).then(function(){
+        textarea.val("").trigger("input")
+      })
+    }
   })
 
   $(".button").on("click", function(event){
