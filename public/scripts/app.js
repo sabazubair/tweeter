@@ -7,6 +7,18 @@
 // Test / driver code (temporary). Eventually will get this from the server.
 
 $(document).ready(function() {
+  $("textarea").focus(function(){
+    $(".hello").show();
+  }).blur(function(){
+    $(".hello").hide();
+  });
+
+  $("textarea").focus();
+
+  $(".hello").hide();
+
+
+
 //   const data = [
 //   {
 //     "user": {
@@ -59,7 +71,7 @@ $(document).ready(function() {
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   }
-
+//added an escape function on the tweet content area so that html remains protected.
   function createTweetElement(tweet){
     return `<article class="tweet">
           <header>
@@ -112,5 +124,11 @@ $(document).ready(function() {
       textarea.val("").trigger("input")
     })
   }
+  })
+
+  $(".button").on("click", function(event){
+  $(".new-tweet").slideToggle("medium");
+
+  $("textarea").focus();
   })
 });
