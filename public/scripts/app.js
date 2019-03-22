@@ -64,6 +64,8 @@ $(document).ready(function() {
 //     "created_at": 1461113796368
 //   }
 // ];
+
+//OBTAINED FROM STACK OVERFLOW
 function timeSince(date) {
 
   var seconds = Math.floor((new Date() - date) / 1000);
