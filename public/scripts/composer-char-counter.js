@@ -1,3 +1,5 @@
+// NTS: Remember to wrap function in $document.ready()
+
 $(document).ready(function() {
   $("textarea").on("input", function(){
   var textarea = $(this);
