@@ -64,6 +64,33 @@ $(document).ready(function() {
 //     "created_at": 1461113796368
 //   }
 // ];
+function timeSince(date) {
+
+  var seconds = Math.floor((new Date() - date) / 1000);
+
+  var interval = Math.floor(seconds / 31536000);
+
+  if (interval > 1) {
+    return interval + " years";
+  }
+  interval = Math.floor(seconds / 2592000);
+  if (interval > 1) {
+    return interval + " months";
+  }
+  interval = Math.floor(seconds / 86400);
+  if (interval > 1) {
+    return interval + " days";
+  }
+  interval = Math.floor(seconds / 3600);
+  if (interval > 1) {
+    return interval + " hours";
+  }
+  interval = Math.floor(seconds / 60);
+  if (interval > 1) {
+    return interval + " minutes";
+  }
+  return Math.floor(seconds) + " seconds";
+}
 
   function escape(str) {
     var div = document.createElement('div');
@@ -80,7 +107,7 @@ $(document).ready(function() {
           </header>
           <p> ${escape(tweet.content.text)} </p>
           <footer>
-            <h6> ${tweet.created_at} </h6>
+            <h6> ${timeSince(parseInt(tweet.created_at))} </h6>
             <i class="fas fa-heart"></i>
             <i class="fas fa-retweet"></i>
             <i class="fas fa-flag"></i>
@@ -89,6 +116,7 @@ $(document).ready(function() {
   }
 
   function renderTweets(tweets){
+    $('.tweets').empty();
     tweets.forEach(function(tweet) {
       var $tweet = createTweetElement(tweet);
       console.log($tweet);
