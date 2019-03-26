@@ -109,7 +109,7 @@ function timeSince(date) {
           </header>
           <p> ${escape(tweet.content.text)} </p>
           <footer>
-            <h6> ${timeSince(parseInt(tweet.created_at))} </h6>
+            <h6> ${timeSince(tweet.created_at)} </h6>
             <i class="fas fa-heart"></i>
             <i class="fas fa-retweet"></i>
             <i class="fas fa-flag"></i>
